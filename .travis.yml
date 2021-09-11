@@ -20,9 +20,6 @@ cache:
   directories:
     - $HOME/.m2
 
-before_script:
-  - psql -c 'create database books_service_db' -U postgres
-
 script:
   - ./mvnw clean install -DskipTests=true -B
 
