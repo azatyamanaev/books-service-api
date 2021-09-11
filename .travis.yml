@@ -1,5 +1,6 @@
 language: java
 jdk: opendjk-11
+dist: trusty
 services:
 - docker
 
