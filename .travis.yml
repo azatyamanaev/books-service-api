@@ -2,7 +2,9 @@ arch: amd64
 os: linux
 dist: focal
 language: java
-jdk: opendjk-11
+jdk: 
+  - opendjk11
+  - opendjk8
 
 services:
 - docker
@@ -18,4 +20,4 @@ deploy:
   provider: heroku
   app: books-service-api
   api_key:
-    secure: 8a180d79-b8ed-44b7-99ff-c9711ac87aed
+    secure: "8a180d79-b8ed-44b7-99ff-c9711ac87aed"
