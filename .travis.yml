@@ -1,5 +1,7 @@
+arch: amd64
+os: linux
+dist: focal
 language: java
-dist: xenial
 jdk: 
   - opendjk11
   - oraclejdk11
@@ -12,7 +14,8 @@ cache:
   - $HOME/.m2
 
 script:
-- ./mvnw clean install -B
+  - ./mvnw clean install -B
+  - docker-compose -f docker-compose.yml up --build
 
 deploy:
   provider: heroku
