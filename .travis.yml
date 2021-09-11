@@ -28,9 +28,9 @@ after_success:
 deploy:
   provider: heroku
   app: books-service-api
+  on:
+    branch: main
   api_key:
     secure: "8a180d79-b8ed-44b7-99ff-c9711ac87aed"
-  on:
-    branches:
-      only:
-        - main
+ 
+      
