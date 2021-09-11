@@ -10,13 +10,6 @@ services:
   - docker
   - postgresql
 
-addons:
-  postgresql: "11"
-  apt:
-    packages:
-      - postgresql-11
-      - postgresql-client-11
-
 env:
   global:
     - PGPORT=5432
@@ -32,6 +25,7 @@ script:
   - ./mvnw clean install -DskipTests=true -B
   - docker-compose -f docker-compose.yml up --build
 
+after_success:
 
 deploy:
   provider: heroku
