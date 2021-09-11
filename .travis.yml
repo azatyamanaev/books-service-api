@@ -1,6 +1,9 @@
+arch: amd64
+os: linux
+dist: focal
 language: java
 jdk: opendjk-11
-dist: trusty
+
 services:
 - docker
 
