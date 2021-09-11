@@ -4,9 +4,5 @@ setup:
       as: DATABASE
   config:
     APP_NAME: books-service-api
-    SPRING_DATASOURCE_URL: jdbc:postgresql://ec2-44-195-247-84.compute-1.amazonaws.com:5432/dqc12ua043n49
-    SPRING_DATASOURCE_PASSWORD: 3ea5f4d7370f588b83b7dad26b8425bbd10ca84dbec37478507e112bcd68c957
-    SPRING_DATASOURCE_USERNAME: wvseededifhvdt
-    SPRING_JPA_HIBERNATE_DDL-AUTO: update
 build:
   web: docker/services/backend/Dockerfile
