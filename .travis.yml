@@ -1,8 +1,11 @@
-sudo: required
 language: java
 jdk: opendjk-11
 services:
 - docker
+
+cache:
+  directories:
+  - $HOME/.m2
 
 script:
 - ./mvnw clean install -B
