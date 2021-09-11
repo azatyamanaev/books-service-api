@@ -1,0 +1,57 @@
+GET http://localhost:8099/books
+
+
+###
+
+GET http://localhost:8099/books/page?number=2
+
+###
+
+PUT http://localhost:8099/books/1/read
+
+###
+
+GET http://localhost:8099/books/search?string=основы&number=2
+
+###
+
+GET http://localhost:8099/books/stats?from=2021-09-05&to=2021-09-15
+
+###
+
+GET http://localhost:8099/books/one?name=Python
+
+###
+
+
+POST http://localhost:8099/books
+Content-Type: application/json
+
+{
+  "title": "Postgresql.Основы",
+  "description": "основы Postgresql",
+  "author": "Ричард Стоунз",
+  "isbn": "978-5-367-03333-5",
+  "printYear": 2012,
+  "readAlready": false,
+  "image": "img"
+}
+
+###
+
+PUT http://localhost:8099/books/1
+Content-Type: application/json
+
+{
+  "title": "Postgresql.Основы",
+  "description": "основы Postgresql",
+  "author": "Ричард Стоунз",
+  "isbn": "978-5-367-03333-5",
+  "printYear": 2009,
+  "readAlready": true,
+  "image": "img"
+}
+
+###
+
+DELETE http://localhost:8099/books/2

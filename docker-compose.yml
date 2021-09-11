@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  postgres:
+    build:
+      context: docker/services/db
+      dockerfile: Dockerfile
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+    ports:
+      - "5434:5432"
+  app:
+    build:
+      context: docker/services/backend
+      dockerfile: Dockerfile
+    command: java -jar ./app.jar
+    environment:
+      - PORT=8099
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres/books_service_db
+    image: 'java-app'
+    ports:
+      - "8099:8099"
+    depends_on:
+      - postgres
+
+volumes:
+  db-data:
