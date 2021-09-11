@@ -14,25 +14,24 @@ addons:
   postgresql: "11"
   apt:
     packages:
-    - postgresql-11
-    - postgresql-client-11
+      - postgresql-11
+      - postgresql-client-11
+
 env:
   global:
-  - PGPORT=5432
-  - PGUSER=postgres
-  - PGPASSWORD=postgres
+    - PGPORT=5432
+    - PGUSER=postgres
+    - PGPASSWORD=postgres
 
 
 cache:
   directories:
-  - $HOME/.m2
+    - $HOME/.m2
 
 script:
   - ./mvnw clean install -DskipTests=true -B
   - docker-compose -f docker-compose.yml up --build
 
-
-after
 
 deploy:
   provider: heroku
