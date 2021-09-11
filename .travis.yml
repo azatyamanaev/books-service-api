@@ -1,0 +1,8 @@
+sudo: required
+language: java
+jdk: opendjk-11
+services:
+- docker
+
+script:
+- ./mvnw clean install -B
